@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
     const { login } = useAuth();
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     const users = getUsers();
     
     const handelLogin = (e) => {
@@ -21,12 +21,12 @@ const LoginForm = () => {
             console.log("LoginForm: Login successful", selectedUser);
             login(selectedUser);
             if (selectedUser.role === 'admin') {
-                Navigate('/admin');
+                navigate('/admin');
             } else {
-                Navigate('/user');
+                navigate('/user');
             }
         } else {
-            console.warn("LoginForm: Login failed - Invalid credentials");
+            console.log("LoginForm: Login failed - Invalid credentials");
             toast.error("Invalid user ID or password");
         }
     }

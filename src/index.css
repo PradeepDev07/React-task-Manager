@@ -10,23 +10,23 @@
 
   --primary: #4f46e5;
   --primary-hover: #4338ca;
-  
+
   --danger: #ef4444;
   --danger-hover: #dc2626;
-  
+
   --success: #10b981;
   --success-hover: #059669;
-  
+
   --text-main: #333;
   --text-secondary: #666;
   --text-header: #374151;
   --text-white: white;
-  
+
   --border-light: #ddd;
   --border-lighter: #eee;
-  
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-md: 0 2px 6px rgba(0,0,0,0.1);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -53,13 +53,15 @@ button:hover {
   background-color: var(--primary-hover);
 }
 
-input, select {
+input,
+select {
   padding: 8px;
   margin-bottom: 10px;
   width: 100%;
   border: 1px solid var(--border-light);
   border-radius: 4px;
 }
+
 .login-container {
   display: flex;
   justify-content: center;
@@ -210,11 +212,13 @@ input, select {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
-.user-info{
+
+.user-info {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .profile-circle {
   width: 40px;
   height: 40px;
