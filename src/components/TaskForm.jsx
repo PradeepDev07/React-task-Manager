@@ -15,13 +15,18 @@ export default function TaskForm() {
     const navigate = useNavigate();
     
     const handleLogout = () => {
+        console.log("TaskForm: User logging out");
         signOut();
         navigate("/login");
     }
 
     const handleAddUser = (e) => {
         e.preventDefault();
-        if (!newUser.name || !newUser.password) return;
+        console.log("TaskForm: Adding new user", newUser);
+        if (!newUser.name || !newUser.password) {
+            console.warn("TaskForm: Missing user details");
+            return;
+        }
         
         const user = {
             id: "u" + Date.now(),
@@ -31,6 +36,7 @@ export default function TaskForm() {
         const updatedUsers = [...users, user];
         setUsers(updatedUsers);
         saveUsers(updatedUsers);
+        console.log("TaskForm: User added successfully", user);
         setNewUser({ name: "", password: "", role: "user" });
         toast.success("User created successfully!");
     };
@@ -38,7 +44,11 @@ export default function TaskForm() {
    
 
     const addTask = () => {
-        if (!title) return;
+        console.log("TaskForm: Adding new task", title);
+        if (!title) {
+            console.warn("TaskForm: Task title missing");
+            return;
+        }
         const newTask = {
             id: Date.now().toString(),
             title,
@@ -48,6 +58,7 @@ export default function TaskForm() {
         const updatedTasks = [...tasks, newTask];
         setTasks(updatedTasks);
         saveTasks(updatedTasks);
+        console.log("TaskForm: Task added", newTask);
         setTitle("");
         toast.success("Task created successfully!");
     };

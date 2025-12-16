@@ -7,11 +7,13 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(getCurrentUser());
 
     const login = (userData) => {
+        console.log("AuthContext: Logging in user:", userData);
         setCurrentUser(userData);
         setUser(userData);
     };
 
     const signOut = () => {
+        console.log("AuthContext: Signing out");
         logout();
         setUser(null);
     };

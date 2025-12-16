@@ -30,7 +30,11 @@ const TaskFormUser = () => {
         <div className="container">
             <div className="header">
                 <h1>My Tasks</h1>
-                <button onClick={handleLogout} className="logout-btn">Logout</button>
+                <div className="user-info">
+                    <span className="profile-circle"> {user.name.split(" ")[0][0].toUpperCase()}</span>
+ <button onClick={handleLogout} className="logout-btn">Logout</button>
+                </div>
+               
             </div>
             <div className="task-list">
                 {userTasks.map(task => (

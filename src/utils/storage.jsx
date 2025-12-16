@@ -5,7 +5,9 @@ const USERS_KEY = "users";
 const CURRENT_USER_KEY = "currentUser";
 
 export const initData = () => {
+    console.log("Storage: Checking/Initializing data...");
     if (!localStorage.getItem(USERS_KEY)) {
+        console.log("Storage: Seeding default users");
         localStorage.setItem(
             USERS_KEY,
             JSON.stringify([
@@ -34,8 +36,14 @@ export const getTasks = () =>JSON.parse(localStorage.getItem(TASKS_KEY)) || [];
 
 export const saveTasks = (tasks) =>localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
 
-export const setCurrentUser = (user) =>localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+export const setCurrentUser = (user) => {
+    console.log("Storage: Saving current user to localStorage:", user);
+    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+}
 
 export const getCurrentUser = () =>JSON.parse(localStorage.getItem(CURRENT_USER_KEY));
 
-export const logout = () =>localStorage.removeItem(CURRENT_USER_KEY);
+export const logout = () => {
+    console.log("Storage: Removing current user from localStorage");
+    localStorage.removeItem(CURRENT_USER_KEY);
+}

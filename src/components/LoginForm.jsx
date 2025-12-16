@@ -12,10 +12,13 @@ const LoginForm = () => {
         e.preventDefault();
         const userId = e.target.user.value;
         const password = e.target.password.value;
+        
+        console.log("LoginForm: Login attempt", { userId, password });
 
         const selectedUser = users.find(user => user.id === userId);
 
         if (selectedUser && selectedUser.password === password) {
+            console.log("LoginForm: Login successful", selectedUser);
             login(selectedUser);
             if (selectedUser.role === 'admin') {
                 Navigate('/admin');
@@ -23,12 +26,18 @@ const LoginForm = () => {
                 Navigate('/user');
             }
         } else {
+            console.warn("LoginForm: Login failed - Invalid credentials");
             toast.error("Invalid user ID or password");
         }
     }
 
     return (
+        <div className="login-container">
         <div className="card">
+            
+
+          
+            <img src="/logo.svg" width="10%" alt="Logo" />
             <h2>Login</h2>
 
             <form onSubmit={handelLogin}>
@@ -43,6 +52,7 @@ const LoginForm = () => {
                 <input type="password" id="password" name="password" placeholder="Enter password" />
                 <button type="submit">Login</button>
             </form>
+              </div>
         </div>
     );
 };

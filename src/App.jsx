@@ -17,25 +17,25 @@ function App() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-    <BrowserRouter>
-      <Toaster
-        position="top-right"
-        reverseOrder={false}
-      />
-      <Routes>
-        <Route path="/login" element={<LoginForm />} />
-        
-        <Route element={<AuthAdmin />}>
-          <Route path="/admin" element={<TaskForm />} />
-        </Route>
+      <BrowserRouter>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+        />
+        <Routes>
+          <Route path="/login" element={<LoginForm />} />
 
-        <Route element={<ProtectedRoute />}>
-           <Route path="/user" element={<TaskFormUser />} />
-        </Route>
+          <Route element={<AuthAdmin />}>
+            <Route path="/admin" element={<TaskForm />} />
+          </Route>
 
-        <Route path="*" element={<Navigate to="/login" />} />
-      </Routes>
-    </BrowserRouter>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/user" element={<TaskFormUser />} />
+          </Route>
+
+          <Route path="*" element={<Navigate to="/login" />} />
+        </Routes>
+      </BrowserRouter>
     </DndProvider>
   )
 }
