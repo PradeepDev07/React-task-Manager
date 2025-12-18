@@ -45,3 +45,6 @@ This is an assignment for **Absolute App Labs**.
 *   **Animations:** Add smooth animations for drag-and-drop and page transitions.
 *   **Performance:** Optimize rendering and state management for better speed.
 *   **Backend:** Connect to a real database instead of using LocalStorage.
+##Deployed link 
+
+* **Link:** https://react-task-manager-git-main-pradeep01273-5910s-projects.vercel.app/login
