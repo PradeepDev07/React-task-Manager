@@ -50,7 +50,7 @@ const LoginForm = () => {
                 </select>
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter password" />
-                <button type="submit">Login</button>
+                <button type="submit">Login</button><span className="info-text"> (Select any user and use password: "123")</span>
             </form>
               </div>
         </div>
